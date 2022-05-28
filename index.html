@@ -562,76 +562,105 @@
       </block>
     </category>
     <category name="Excel" css-icon="categoryIcon las la-file-excel" colour="#12641D">
-      <block type="controls_if">
-        <mutation else="1"></mutation>
-        <value name="IF0">
-          <block type="logic_compare">
-            <field name="OP">EQ</field>
-            <value name="A">
-              <block type="variables_get">
-                <field name="VAR" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-              </block>
-            </value>
-            <value name="B">
-              <block type="logic_boolean">
-                <field name="BOOL">TRUE</field>
-              </block>
-            </value>
+      <block type="authenticate_google_spreadsheet">
+        <field name="status" id="!;A!Jb25So.+N,Tg]3gS">STATUS</field>
+        <field name="data" id="Na]5qeWDGRI|LQU]5qqU">AUTH</field>
+        <value name="credential_file_path">
+          <block type="text">
+            <field name="TEXT"></field>
           </block>
         </value>
-        <statement name="DO0">
-          <block type="print_ap">
-            <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-          </block>
-        </statement>
-        <statement name="ELSE">
-          <block type="print_ap">
-            <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-          </block>
-        </statement>
       </block>
-      <block type="print_ap">
-        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+      <block type="excel_get_dataframe_from_google_spreadsheet">
+        <field name="status" id="!;A!Jb25So.+N,Tg]3gS">STATUS</field>
+        <field name="data" id="?[oo%UA9@tyW3.e3%=(8">DATA</field>
+        <value name="auth">
+          <block type="variables_get">
+            <field name="VAR" id="Na]5qeWDGRI|LQU]5qqU">AUTH</field>
+          </block>
+        </value>
+        <value name="spreadsheet_url">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="sheet_name">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
       </block>
-      <block type="excel_get_single_cell">
+      <block type="excel_upload_dataframe_to_google_spreadsheet">
+        <field name="status" id="!;A!Jb25So.+N,Tg]3gS">STATUS</field>
+        <value name="auth">
+          <block type="variables_get">
+            <field name="VAR" id="Na]5qeWDGRI|LQU]5qqU">AUTH</field>
+          </block>
+        </value>
+        <value name="spreadsheet_url">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="sheet_name">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="?[oo%UA9@tyW3.e3%=(8">DATA</field>
+          </block>
+        </value>
+      </block>
+      <block type="excel_to_dataframe_new">
         <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
         <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
         <value name="input_filepath">
           <block type="text">
-            <field name="TEXT">Filepath</field>
+            <field name="TEXT"></field>
           </block>
         </value>
         <value name="input_sheetname">
           <block type="text">
-            <field name="TEXT">Filepath</field>
+            <field name="TEXT"></field>
           </block>
         </value>
         <value name="header">
           <block type="math_number">
             <field name="NUM">0</field>
-          </block>
-        </value>
-        <value name="column_name">
-          <block type="text">
-            <field name="TEXT">Filepath</field>
-          </block>
-        </value>
-        <value name="cell_number">
-          <block type="math_number">
-            <field name="NUM">1</field>
           </block>
         </value>
       </block>
-      <block type="excel_set_single_cell">
+      <block type="dataframe_to_excel_new">
         <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-        <value name="input_filepath">
-          <block type="text">
-            <field name="TEXT">Filepath</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
           </block>
         </value>
-        <value name="input_sheetname">
+        <value name="output_sheetname">
           <block type="text">
-            <field name="TEXT">Filepath</field>
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="output_folder">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="output_filename">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+      <block type="excel_get_single_cell_new">
+        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+        <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
           </block>
         </value>
         <value name="header">
@@ -641,21 +670,40 @@
         </value>
         <value name="column_name">
           <block type="text">
-            <field name="TEXT">Filepath</field>
+            <field name="TEXT"></field>
           </block>
         </value>
         <value name="cell_number">
           <block type="math_number">
-            <field name="NUM">1</field>
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="excel_set_single_cell_new">
+        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+        <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
+          </block>
+        </value>
+        <value name="column_name">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="cell_number">
+          <block type="math_number">
+            <field name="NUM">0</field>
           </block>
         </value>
         <value name="text">
           <block type="text">
-            <field name="TEXT">Filepath</field>
+            <field name="TEXT"></field>
           </block>
         </value>
       </block>
-      <block type="excel_copy_range_from_sheet">
+      <block type="excel_copy_range_from_sheet_new">
         <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
         <field name="data" id="H@JeN;pf,Rpec+P9x`U4">COPIED_DATA</field>
         <value name="input_filepath">
@@ -719,45 +767,25 @@
           </block>
         </next>
       </block>
-      <block type="excel_get_all_header_columns">
+      <block type="excel_get_all_header_columns_new">
         <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
         <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
-        <value name="input_filepath">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="input_sheetname">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="header">
-          <block type="math_number">
-            <field name="NUM">0</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
           </block>
         </value>
       </block>
-      <block type="excel_get_row_column_count">
+      <block type="excel_get_row_column_count_new">
         <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
         <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
-        <value name="input_filepath">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="input_sheetname">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="header">
-          <block type="math_number">
-            <field name="NUM">0</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
           </block>
         </value>
       </block>
-      <block type="excel_get_all_sheet_names">
+      <block type="excel_get_all_sheet_names_new">
         <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
         <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
         <value name="input_filepath">
@@ -766,39 +794,21 @@
           </block>
         </value>
       </block>
-      <block type="excel_clear_sheet">
+      <block type="excel_clear_sheet_new">
         <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-        <value name="input_filepath">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="input_sheetname">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="header">
-          <block type="math_number">
-            <field name="NUM">0</field>
+        <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
           </block>
         </value>
       </block>
-      <block type="excel_drop_columns">
+      <block type="excel_drop_columns_new">
         <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-        <value name="input_filepath">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="input_sheetname">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="header">
-          <block type="math_number">
-            <field name="NUM">0</field>
+        <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
           </block>
         </value>
         <value name="cols">
@@ -807,22 +817,25 @@
           </block>
         </value>
       </block>
-      <block type="excel_remove_duplicates">
-        <field name="same_file">TRUE</field>
+      <block type="excel_remove_duplicates_new">
         <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-        <value name="input_filepath">
+        <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
+          </block>
+        </value>
+        <value name="column_name">
           <block type="text">
             <field name="TEXT"></field>
           </block>
         </value>
-        <value name="input_sheetname">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="header">
-          <block type="math_number">
-            <field name="NUM">0</field>
+      </block>
+      <block type="excel_group_by_column_values_n_split_new">
+        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
           </block>
         </value>
         <value name="column_name">
@@ -841,54 +854,11 @@
           </block>
         </value>
       </block>
-      <block type="excel_group_by_column_values_n_split">
+      <block type="excel_if_value_exists_new">
         <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-        <value name="input_filepath">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="input_sheetname">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="header">
-          <block type="math_number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-        <value name="column_name">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="output_folder">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="output_filename">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-      </block>
-      <block type="excel_if_value_exists">
-        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-        <value name="input_filepath">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="input_sheetname">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="header">
-          <block type="math_number">
-            <field name="NUM">0</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
           </block>
         </value>
         <value name="cols">
@@ -902,7 +872,7 @@
           </block>
         </value>
       </block>
-      <block type="excel_apply_template_format">
+      <block type="excel_apply_template_format_new">
         <field name="same_file">TRUE</field>
         <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
         <value name="input_filepath">
@@ -936,7 +906,7 @@
           </block>
         </value>
       </block>
-      <block type="excel_apply_format_as_table">
+      <block type="excel_apply_format_as_table_new">
         <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
         <value name="input_filepath">
           <block type="text">
@@ -949,7 +919,7 @@
           </block>
         </value>
       </block>
-      <block type="excel_merge_all_files">
+      <block type="excel_merge_all_files_new">
         <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
         <value name="input_filepath">
           <block type="text">
@@ -967,7 +937,7 @@
           </block>
         </value>
       </block>
-      <block type="excel_create_file">
+      <block type="excel_create_file_new">
         <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
         <value name="output_sheetname">
           <block type="text">
@@ -2122,6 +2092,7 @@
   <script src="./lib/blocks/all_blocks.js"></script>
   <script src="./lib/blocks/utility_blocks.js"></script>
   <script src="./lib/generators/all_generator.js"></script>
+  <script src="./lib/generators/excel_gene.js"></script>
   <script src="./lib/blocks/import_autopylot.js"></script>
   <script src="./lib/blocks/chromebrowser.js"></script>
   <script src="./lib/blocks/utility_blocks.js"></script>
