@@ -72,3 +72,16 @@ function add_block() {
   add_xml_to_workspace(search_input.value);
 }
 
+function getScreenShot() {
+  workspace.zoomToFit();
+  workspace.getToolbox().setVisible(false)
+  canvas = html2canvas(document.querySelector("#blocklyDiv"))
+  let base64data = canvas.toDataURL("image/png");
+
+  // html2canvas(document.querySelector("#blocklyDiv")).then(canvas => {
+  //   var base64data = canvas.toDataURL("image/png");
+  //   console.log(base64data);
+  // });
+  console.log(base64data);
+  workspace.getToolbox().setVisible(true)
+}
