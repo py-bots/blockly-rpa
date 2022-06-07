@@ -215,7 +215,7 @@
         </block>
         <block type="math_random_float"></block>
       </category>
-      <category name="Text" css-icon="customIcon las la-spell-check" colour="#FFBF00">
+      <category name="Text" css-icon="customIcon las la-spell-check" colour="#574A07">
         <!-- <category name="Text" css-icon="${TEXT_CATEGORY_ICON}" colour="${TEXT_CATEGORY_COLOUR}"> -->
         <block type="text">
           <field name="TEXT"></field>
@@ -385,6 +385,66 @@
       <category name="Functions" css-icon="customIcon las la-stream" colour="#FF6680" custom="PROCEDURE"></category>
       <!-- <category name="Functions" css-icon="${PROCEDURE_CATEGORY_ICON}" colour="${PROCEDURE_CATEGORY_COLOUR}" custom="PROCEDURE"></category> -->
     </category>
+    <category name="Variables" css-icon="categoryIcon las la-shapes" colour="#FF8C1A" custom="VARIABLE">
+    </category>
+    <category name="Common" css-icon="categoryIcon las la-infinity" colour="#150E6B">
+      <!-- <block name="dicts_create_with_container "></block> -->
+      <block type="print_ap">
+        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+      </block>
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+      <block type="text">
+        <field name="TEXT"></field>
+      </block>
+      <block type="text_join">
+        <mutation items="2"></mutation>
+      </block>
+      <block type="text_print">
+        <value name="TEXT">
+          <shadow type="text">
+            <field name="TEXT">abc</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="lists_create_with">
+        <mutation items="3"></mutation>
+      </block>
+      <block type="controls_if"></block>
+      <block type="logic_compare">
+        <field name="OP">EQ</field>
+      </block>
+      <block type="controls_forEach">
+        <field name="VAR" id="t{1q;_Q,8k@xCqy~aed=">j</field>
+      </block>
+      <block type="controls_repeat_ext">
+        <value name="TIMES">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="controls_for">
+        <field name="VAR" id="qoJ?{*TfEi0Ih%wOf|]n">i</field>
+        <value name="FROM">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+        <value name="BY">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+    </category>
+
 
     <!-- <category name="Automation" css-icon="pythonIcon las la-robot" colour="#006C16"> -->
     <!-- <category name="Logic" css-icon="customIcon las la-arrows-alt" colour="${LOGIC_CATEGORY_COLOUR}"> -->
@@ -1242,6 +1302,10 @@
       </block>
     </category>
     <category name="Utility" css-icon="categoryIcon las la-tools" colour="#003658">
+      <block type="simple_equals_line">
+      </block>
+      <block type="simple_equals_text">
+      </block>
       <block type="code_text_field">
       </block>
       <block type="code_text_line">
@@ -2069,8 +2133,7 @@
       <block type="get_path"></block>
       <block type="folder_path"></block>
     </category>
-    <category name="Variables" css-icon="categoryIcon las la-shapes" colour="#FF8C1A" custom="VARIABLE">
-    </category>
+
 
   </xml>
   <!-- 
@@ -2092,6 +2155,7 @@
   <script src="./srcs/blockly_theme.js"></script>
   <script src="./lib/blocks/all_blocks.js"></script>
   <script src="./lib/blocks/utility_blocks.js"></script>
+  <!-- <script src="./lib/blocks/blockly_dicts.js"></script> -->
   <script src="./lib/generators/all_generator.js"></script>
   <script src="./lib/generators/excel_gene.js"></script>
   <script src="./lib/blocks/import_autopylot.js"></script>

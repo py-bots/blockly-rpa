@@ -11,7 +11,7 @@ var htmlEditor = CodeMirror.fromTextArea(document.getElementById("code"), {
 });
 const toolbox = document.getElementById("toolbox")
 const options = {
-  // renderer: 'zelos',
+  renderer: 'zelos',
   toolbox: toolbox,
   collapse: true,
   comments: true,
@@ -23,7 +23,7 @@ const options = {
   zoom: {
     controls: true,
     // wheel : true,
-    startScale: 0.85,
+    startScale: 0.75,
     maxScale: 1,
     minScale: 0.3,
     scaleSpeed: 1.2,

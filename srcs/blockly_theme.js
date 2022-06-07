@@ -1,3 +1,6 @@
+TEXT_CATEGORY_COLOUR = '#492B07';
+LOOP_CATEGORY_COLOUR = '#330B0B';
+
 Darker = Blockly.Theme.defineTheme("Darker", {
   base: Blockly.Themes.Zelos,
 
@@ -9,33 +12,34 @@ Darker = Blockly.Theme.defineTheme("Darker", {
     size: 12,
   },
 
-  // blockStyles: {
-  //   logic_blocks: {
-  //     colourPrimary: LOGIC_CATEGORY_COLOUR,
-  //   },
-  //   loop_blocks: {
-  //     colourPrimary: LOOP_CATEGORY_COLOUR,
-  //   },
-  //   text_blocks: {
-  //     colourPrimary: TEXT_CATEGORY_COLOUR,
-  //   },
-  //   math_blocks: {
-  //     colourPrimary: MATH_CATEGORY_COLOUR,
-  //   },
-  //   list_blocks: {
-  //     colourPrimary: LIST_CATEGORY_COLOUR,
-  //   },
-  //   colour_blocks: {
-  //     colourPrimary: COLOR_CATEGORY_COLOUR,
-  //   },
+  blockStyles: {
+    // logic_blocks: {
+    //   colourPrimary: LOGIC_CATEGORY_COLOUR,
+    // },
+    // loop_blocks: {
+    //   colourPrimary: LOOP_CATEGORY_COLOUR,
+    // },
+    text_blocks: {
+      colourPrimary: TEXT_CATEGORY_COLOUR,
+      // sec
+    },
+    // math_blocks: {
+    //   colourPrimary: MATH_CATEGORY_COLOUR,
+    // },
+    // list_blocks: {
+    //   colourPrimary: LIST_CATEGORY_COLOUR,
+    // },
+    // colour_blocks: {
+    //   colourPrimary: COLOR_CATEGORY_COLOUR,
+    // },
 
-  //   variable_blocks: {
-  //     colourPrimary: VARIABLE_CATEGORY_COLOUR,
-  //   },
-  //   procedure_blocks: {
-  //     colourPrimary: PROCEDURE_CATEGORY_COLOUR,
-  //   },
-  // },
+    // variable_blocks: {
+    //   colourPrimary: VARIABLE_CATEGORY_COLOUR,
+    // },
+    // procedure_blocks: {
+    //   colourPrimary: PROCEDURE_CATEGORY_COLOUR,
+    // },
+  },
 
   componentStyles: {
     workspaceBackgroundColour: "#0C0C32",
