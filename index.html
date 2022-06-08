@@ -398,6 +398,8 @@
       <block type="text">
         <field name="TEXT"></field>
       </block>
+      <block type="dict_input">
+      </block>
       <block type="text_join">
         <mutation items="2"></mutation>
       </block>
@@ -443,6 +445,169 @@
           </shadow>
         </value>
       </block>
+    </category>
+    <category name="Special" css-icon="categoryIcon las la-infinity" colour="#150E6B">
+      <block type="import_cf">
+      </block>
+      <block type="Advanced_AP">
+      </block>
+
+      <!-- <block type="simple_equals_text">
+      </block> -->
+      <block type="variables_set">
+        <field name="VAR" id=")g,:TUObA+hZP;IhJMeZ">var_a</field>
+        <value name="VALUE">
+          <block type="simple_equals_line">
+            <field name="text">'Single Line Code, Involving variable'</field>
+          </block>
+        </value>
+      </block>
+      <block type="variables_set">
+        <field name="VAR" id=")g,:TUObA+hZP;IhJMeZ">var_a</field>
+        <value name="VALUE">
+          <block type="simple_equals_text">
+          </block>
+        </value>
+      </block>
+      <block type="simple_equals_line">
+        <field name="text">'Single Line Code, Assign Type'</field>
+      </block>
+      <block type="simple_equals_multiline">
+      </block>
+
+
+      <block type="code_text_field">
+      </block>
+      <block type="code_text_line">
+      </block>
+    </category>
+    <category name="Utility" css-icon="categoryIcon las la-tools" colour="#003658">
+
+      <block type="controls_if">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="variables_get">
+                <field name="VAR" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="logic_boolean">
+                <field name="BOOL">TRUE</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="print_ap">
+            <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="print_ap">
+            <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+          </block>
+        </statement>
+      </block>
+      <block type="print_ap">
+        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+      </block>
+      <block type="clipboard_get_data">
+        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+        <field name="data" id="Ky!2+OxBW3u1eN1+N]7m">DATA</field>
+      </block>
+      <block type="clipboard_set_data">
+        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+        <value name="data">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+      <block type="pause_program">
+        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+        <value name="seconds">
+          <block type="math_number">
+            <field name="NUM">5</field>
+          </block>
+        </value>
+      </block>
+      <block type="api_request">
+        <field name="method">get</field>
+        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+        <field name="data" id="-#3/I+va-=*p3[jdPz0#">DATA</field>
+        <value name="url">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="headers">
+          <block type="dict_input">
+            <field name="dict_value">"charset": "utf-8", "Content-Type": "application/json"</field>
+          </block>
+        </value>
+        <value name="body">
+          <block type="dict_input">
+            <field name="dict_value"></field>
+          </block>
+        </value>
+      </block>
+      <block type="screen_scrape_extract_table">
+        <field name="include_after_this_word">FALSE</field>
+        <field name="include_before_this_word">FALSE</field>
+        <field name="status" id="_HQ{;aZo^-dUfz*w]5-Y">STATUS</field>
+        <field name="data" id="G4~!gK1w3iCRU(iYUDLM">DATA</field>
+        <value name="switch_to_window">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name=",after_this_word">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="before_this_word">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+      <block type="date_time_now">
+        <field name="date" id="ee}a,2EGP$6V,)g}Yld|">DATE</field>
+      </block>
+      <block type="add_datetime">
+        <field name="time_type">days</field>
+        <field name="date" id="ee}a,2EGP$6V,)g}Yld|">DATE</field>
+        <value name="input_date">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="value">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="subtract_datetime">
+        <field name="time_type">days</field>
+        <field name="date" id="ee}a,2EGP$6V,)g}Yld|">DATE</field>
+        <value name="input_date">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="value">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+
+
     </category>
 
 
@@ -1016,6 +1181,149 @@
           </block>
         </value>
       </block>
+      <block type="excel_tabular_data_from_website">
+        <field name="status" id="_HQ{;aZo^-dUfz*w]5-Y">STATUS</field>
+        <field name="data" id="G4~!gK1w3iCRU(iYUDLM">DATA</field>
+        <value name="website_url">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="table_number">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="df_from_list">
+        <field name="df" id=",j;+y6@nrq0T_ikaULiA">DF</field>
+        <value name="list_of_lists">
+          <block type="lists_create_with" inline="true">
+            <mutation items="2"></mutation>
+            <value name="ADD0">
+              <block type="text">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <value name="column_names">
+          <block type="lists_create_with" inline="true">
+            <mutation items="2"></mutation>
+            <value name="ADD0">
+              <block type="text">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+      <block type="df_from_string">
+        <field name="df" id=",j;+y6@nrq0T_ikaULiA">DF</field>
+        <value name="df_string">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="word_delimeter">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="line_delimeter">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="column_names">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+      <block type="df_extract_sub_df">
+        <field name="status" id="_HQ{;aZo^-dUfz*w]5-Y">STATUS</field>
+        <field name="data" id="G4~!gK1w3iCRU(iYUDLM">DATA</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id=",j;+y6@nrq0T_ikaULiA">DF</field>
+          </block>
+        </value>
+        <value name="row_start">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="row_end">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="column_start">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="column_end">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+      <block type="set_value_in_df">
+        <field name="status" id="_HQ{;aZo^-dUfz*w]5-Y">STATUS</field>
+        <field name="data" id="G4~!gK1w3iCRU(iYUDLM">DATA</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id=",j;+y6@nrq0T_ikaULiA">DF</field>
+          </block>
+        </value>
+        <value name="row_number">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="column_number">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="value">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+      <block type="get_value_in_df">
+        <field name="status" id="_HQ{;aZo^-dUfz*w]5-Y">STATUS</field>
+        <field name="data" id="G4~!gK1w3iCRU(iYUDLM">DATA</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id=",j;+y6@nrq0T_ikaULiA">DF</field>
+          </block>
+        </value>
+        <value name="row_number">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="column_number">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+
     </category>
     <category name="String" css-icon="categoryIcon las la-font" colour="#025451">
       <block type="controls_if">
@@ -1076,6 +1384,28 @@
           </block>
         </value>
       </block>
+      <block type="string_extract_substring">
+        <field name="include_start_word">FALSE</field>
+        <field name="include_end_word">FALSE</field>
+        <field name="status" id="_HQ{;aZo^-dUfz*w]5-Y">STATUS</field>
+        <field name="data" id="G4~!gK1w3iCRU(iYUDLM">DATA</field>
+        <value name="string">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="start_word">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="end_word">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+
     </category>
     <category name="Folder" css-icon="categoryIcon las la-folder" colour="#800080">
       <block type="controls_if">
@@ -1299,87 +1629,6 @@
       <block type="window_get_active_window">
         <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
         <field name="data" id="YdnboV9d6Vt)7q.ejZ=]">DATA</field>
-      </block>
-    </category>
-    <category name="Utility" css-icon="categoryIcon las la-tools" colour="#003658">
-      <block type="simple_equals_line">
-      </block>
-      <block type="simple_equals_text">
-      </block>
-      <block type="code_text_field">
-      </block>
-      <block type="code_text_line">
-      </block>
-      <block type="controls_if">
-        <mutation else="1"></mutation>
-        <value name="IF0">
-          <block type="logic_compare">
-            <field name="OP">EQ</field>
-            <value name="A">
-              <block type="variables_get">
-                <field name="VAR" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-              </block>
-            </value>
-            <value name="B">
-              <block type="logic_boolean">
-                <field name="BOOL">TRUE</field>
-              </block>
-            </value>
-          </block>
-        </value>
-        <statement name="DO0">
-          <block type="print_ap">
-            <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-          </block>
-        </statement>
-        <statement name="ELSE">
-          <block type="print_ap">
-            <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-          </block>
-        </statement>
-      </block>
-      <block type="print_ap">
-        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-      </block>
-      <block type="clipboard_get_data">
-        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-        <field name="data" id="Ky!2+OxBW3u1eN1+N]7m">DATA</field>
-      </block>
-      <block type="clipboard_set_data">
-        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-        <value name="data">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-      </block>
-      <block type="pause_program">
-        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-        <value name="seconds">
-          <block type="math_number">
-            <field name="NUM">5</field>
-          </block>
-        </value>
-      </block>
-      <block type="api_request">
-        <field name="method">get</field>
-        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-        <field name="data" id="-#3/I+va-=*p3[jdPz0#">DATA</field>
-        <value name="url">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="headers">
-          <block type="text">
-            <field name="TEXT">{"charset": "utf-8", "Content-Type": "application/json"}</field>
-          </block>
-        </value>
-        <value name="body">
-          <block type="text">
-            <field name="TEXT">{}</field>
-          </block>
-        </value>
       </block>
     </category>
     <category name="Chrome" css-icon="categoryIcon lab la-chrome" colour="#611BD1">
@@ -2155,6 +2404,7 @@
   <script src="./srcs/blockly_theme.js"></script>
   <script src="./lib/blocks/all_blocks.js"></script>
   <script src="./lib/blocks/utility_blocks.js"></script>
+  <script src="./lib/blocks/june_blocks.js"></script>
   <!-- <script src="./lib/blocks/blockly_dicts.js"></script> -->
   <script src="./lib/generators/all_generator.js"></script>
   <script src="./lib/generators/excel_gene.js"></script>
