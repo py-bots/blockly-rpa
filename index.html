@@ -451,6 +451,19 @@
       </block>
       <block type="Advanced_AP">
       </block>
+      <block type="class_custom_code">
+        <field name="code">.custom_code</field>
+        <value name="var_a">
+          <block type="variables_get">
+            <field name="VAR" id="-ox{Lr]0tF|q.SW},%{l">any_variable</field>
+          </block>
+        </value>
+        <value name="var_b">
+          <block type="variables_get">
+            <field name="VAR" id="D]naA4iv$}As`MEnT77:">any_variable_2</field>
+          </block>
+        </value>
+      </block>
 
       <!-- <block type="simple_equals_text">
       </block> -->
@@ -1632,10 +1645,28 @@
       </block>
     </category>
     <category name="Chrome" css-icon="categoryIcon lab la-chrome" colour="#611BD1">
-      <block type="chrome_instance">
+      <block type="chrome_instance_v2">
         <value name="chrome_driver">
           <block type="variables_get">
             <field name="VAR" id="7E3|[}%GmC#yBWq|b$=r">chrome_driver</field>
+          </block>
+        </value>
+        <value name="selenium_driver">
+          <block type="variables_get">
+            <field name="VAR">selenium_driver</field>
+          </block>
+        </value>
+      </block>
+      <block type="class_custom_code_chrome">
+        <field name="code">.code_extension</field>
+        <value name="var_a">
+          <block type="variables_get">
+            <field name="VAR" id="-ox{Lr]0tF|q.SW},%{l">elements</field>
+          </block>
+        </value>
+        <value name="var_b">
+          <block type="variables_get">
+            <field name="VAR" id="D]naA4iv$}As`MEnT77:">selenium_driver</field>
           </block>
         </value>
       </block>
@@ -1748,6 +1779,28 @@
         </value>
         <value name="function_variable">
           <block type="chrome_hit_enter">
+            <value name="navigate">
+              <block type="variables_get">
+                <field name="VAR" id="]3qms+@Q(Gp:8RS4Ag^5">chrome_browser</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+      <block type="status">
+        <value name="status_variable">
+          <block type="variables_get">
+            <field name="VAR" id="?3G|E*Aj5fWHvFDM}TU.">status</field>
+          </block>
+        </value>
+        <value name="function_variable">
+          <block type="chrome_check_exists">
+            <field name="element">t</field>
+            <value name="text">
+              <block type="text">
+                <field name="TEXT">MyAutoPylot is awesome</field>
+              </block>
+            </value>
             <value name="navigate">
               <block type="variables_get">
                 <field name="VAR" id="]3qms+@Q(Gp:8RS4Ag^5">chrome_browser</field>
