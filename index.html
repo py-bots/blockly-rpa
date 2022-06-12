@@ -495,7 +495,6 @@
       </block>
     </category>
     <category name="Utility" css-icon="categoryIcon las la-tools" colour="#003658">
-
       <block type="controls_if">
         <mutation else="1"></mutation>
         <value name="IF0">
@@ -567,27 +566,6 @@
           </block>
         </value>
       </block>
-      <block type="screen_scrape_extract_table">
-        <field name="include_after_this_word">FALSE</field>
-        <field name="include_before_this_word">FALSE</field>
-        <field name="status" id="_HQ{;aZo^-dUfz*w]5-Y">STATUS</field>
-        <field name="data" id="G4~!gK1w3iCRU(iYUDLM">DATA</field>
-        <value name="switch_to_window">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name=",after_this_word">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="before_this_word">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-      </block>
       <block type="date_time_now">
         <field name="date" id="ee}a,2EGP$6V,)g}Yld|">DATE</field>
       </block>
@@ -619,13 +597,7 @@
           </block>
         </value>
       </block>
-
-
     </category>
-
-
-    <!-- <category name="Automation" css-icon="pythonIcon las la-robot" colour="#006C16"> -->
-    <!-- <category name="Logic" css-icon="customIcon las la-arrows-alt" colour="${LOGIC_CATEGORY_COLOUR}"> -->
     <category name="Mouse" css-icon="categoryIcon las la-mouse" colour="#42668B">
       <block type="controls_if">
         <mutation else="1"></mutation>
@@ -1917,8 +1889,6 @@
         </value>
       </block>
     </category>
-
-    <!-- </category> -->
     <category name="Comp Vision" css-icon="categoryIcon lar la-eye" colour="#102F24">
       <block type="controls_if">
         <mutation else="1"></mutation>
@@ -2430,13 +2400,31 @@
       <block type="citrix_window_clear_search">
         <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
       </block>
+      <block type="screen_scrape_extract_table">
+        <field name="include_after_this_word">FALSE</field>
+        <field name="include_before_this_word">FALSE</field>
+        <field name="status" id="_HQ{;aZo^-dUfz*w]5-Y">STATUS</field>
+        <field name="data" id="G4~!gK1w3iCRU(iYUDLM">DATA</field>
+        <value name="switch_to_window">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name=",after_this_word">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="before_this_word">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
     </category>
     <category name="System" css-icon="categoryIcon las la-desktop" colour="#003658">
       <block type="get_path"></block>
-      <block type="folder_path"></block>
     </category>
-
-
   </xml>
   <!-- 
   <div style="height: 100px;">
