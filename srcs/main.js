@@ -40,7 +40,7 @@ const options = {
   move: {
     scrollbars: {
       vertical: true,
-      horizontal: true
+      // horizontal: true
     },
   },
   theme: "Darker",
