@@ -385,6 +385,197 @@
       <category name="Functions" css-icon="customIcon las la-stream" colour="#FF6680" custom="PROCEDURE"></category>
       <!-- <category name="Functions" css-icon="${PROCEDURE_CATEGORY_ICON}" colour="${PROCEDURE_CATEGORY_COLOUR}" custom="PROCEDURE"></category> -->
     </category>
+    <category name="NEW CAT" colour="#5ba58c">
+      <block type="controls_if">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="variables_get">
+                <field name="VAR" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="logic_boolean">
+                <field name="BOOL">TRUE</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="print_ap">
+            <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="print_ap">
+            <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+          </block>
+        </statement>
+      </block>
+      <block type="print_ap">
+        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+      </block>
+      <block type="excel_concat_all_sheets_of_given_excel">
+        <field name="data" id="U#-~hkY|E~Kap$0iE},[">DATA</field>
+        <value name="excel_file_path">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="sheet_names_as_list">
+          <block type="lists_create_with" inline="true">
+            <mutation items="2"></mutation>
+            <value name="ADD0">
+              <block type="text">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+      <block type="folder_delete_file_or_folder">
+        <field name="print_status">TRUE</field>
+        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+        <value name="file_or_folder_path">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+      <block type="df_drop_rows">
+        <field name="data" id="U#-~hkY|E~Kap$0iE},[">DATA</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="Ln(xNs527~EH0J!I1BOn">df</field>
+          </block>
+        </value>
+        <value name="row_start">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="row_end">
+          <block type="math_number">
+            <field name="NUM">3</field>
+          </block>
+        </value>
+      </block>
+      <block type="df_vlookup">
+        <field name="data" id="U#-~hkY|E~Kap$0iE},[">DATA</field>
+        <value name="df1">
+          <block type="variables_get">
+            <field name="VAR" id=";b;R)}l5g6Iv1)n`#|QL">df1</field>
+          </block>
+        </value>
+        <value name="df2">
+          <block type="variables_get">
+            <field name="VAR" id=";b;R)}l5g6Iv1)n`#|QL">df1</field>
+          </block>
+        </value>
+        <value name="column_name">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="how">
+          <block type="text">
+            <field name="TEXT">left</field>
+          </block>
+        </value>
+      </block>
+      <block type="excel_get_single_cell">
+        <field name="data" id="U#-~hkY|E~Kap$0iE},[">DATA</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="Ln(xNs527~EH0J!I1BOn">df</field>
+          </block>
+        </value>
+        <value name="header">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="column_name">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="cell_number">
+          <block type="math_number">
+            <field name="NUM">3</field>
+          </block>
+        </value>
+      </block>
+      <block type="excel_set_single_cell">
+        <field name="data" id="U#-~hkY|E~Kap$0iE},[">DATA</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="Ln(xNs527~EH0J!I1BOn">df</field>
+          </block>
+        </value>
+        <value name="column_name">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="cell_number">
+          <block type="math_number">
+            <field name="NUM">3</field>
+          </block>
+        </value>
+        <value name="text">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+      <block type="pdf_extract_all_tables">
+        <field name="table_with_borders">TRUE</field>
+        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+        <value name="pdf_file_path">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="output_folder">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="output_file_name">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+      <block type="pdf_extract_table">
+        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+        <field name="data" id="U#-~hkY|E~Kap$0iE},[">DATA</field>
+        <value name="pdf_file_path">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="table_number">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="page_number">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+    </category>
+
     <category name="Variables" css-icon="categoryIcon las la-shapes" colour="#FF8C1A" custom="VARIABLE">
     </category>
     <category name="Common" css-icon="categoryIcon las la-infinity" colour="#150E6B">
