@@ -100,7 +100,7 @@ class Block {
         Eg: 369 or 435, Defaults: ''.
         y1 or y2 (int): y-coordinate on screen.
         Eg: 369 or 435, Defaults: ''.
-        delay (float, optional): Seconds to wait while performing action. 
+        delay (float, optional): Seconds to wait while performing action.
         Eg: 1 or 0.5, Defaults to 0.5.
     Returns: [status]
         bool: Whether the function is successful or failed.
@@ -116,11 +116,11 @@ class Block {
       shortDescription: 'Emulates the given keystrokes.',
       fullDescription: '''Emulates the given keystrokes.
     Args:
-        key_1 (str, optional): Enter the 1st key 
+        key_1 (str, optional): Enter the 1st key
         Eg: ctrl or shift. Defaults to ''.
-        key_2 (str, optional): Enter the 2nd key in combination. 
+        key_2 (str, optional): Enter the 2nd key in combination.
         Eg: alt or A. Defaults to ''.
-        key_3 (str, optional): Enter the 3rd key in combination. 
+        key_3 (str, optional): Enter the 3rd key in combination.
         Eg: del or tab. Defaults to ''.
         write_to_window (str, optional): (Only in Windows) Name of Window you want to activate. Defaults to "".
     Returns: [status]
@@ -249,7 +249,13 @@ class Block {
       blockXml:
           '<block type="file_rename"> <field name="print_status">TRUE</field> <field name="status" id="m,f^=#eZ|R*fFAlBL_f">STATUS</field> <value name="old_file_path"> <block type="text"> <field name="TEXT"></field> </block> </value> <value name="new_file_name"> <block type="text"> <field name="TEXT"></field> </block> </value> </block>',
       name: 'Rename File',
-      keywords: ['rename', 'file'],
+      keywords: [
+        'rename',
+        'file',
+        'change file path',
+        'move',
+        'change',
+      ],
       shortDescription:
           'Renames the given file name to new file name with same extension.',
       fullDescription:
@@ -470,7 +476,7 @@ class Block {
       shortDescription: 'Image to Text',
       fullDescription: '''Reads the text from the image.
     Args:
-        img_path (str, optional): Path of the image. 
+        img_path (str, optional): Path of the image.
         Eg: D:\\Files\\Image.png, Defaults to "".
     Returns: [status,data]
         bool: If function is failed returns False.
@@ -580,7 +586,7 @@ class Block {
         user_input_img_path (str): [description]. Defaults to "".
         name_required_on_image (str, optional): [description]. Defaults to "".
         output_folder (str, optional): [description]. Defaults to "".
-    
+
     Returns:
         [status]''',
     ),
@@ -597,7 +603,7 @@ class Block {
         input_image_folder_path (str, optional): [description]. Defaults to "".
         style_image_folder_path (str, optional): [description]. Defaults to "".
         output_image_folder_path (str, optional): [description]. Defaults to "".
-    
+
     Returns:
         [status]''',
     ),
@@ -862,8 +868,8 @@ class Block {
       keywords: ['data', 'science', 'draw', 'charts', 'excel'],
       shortDescription: 'Draw Charts From Excel',
       fullDescription:
-          '''Interactive data visualization function, which accepts excel file, X & Y column. 
-    Chart types accepted are bar , scatter , pie , sun , histogram , box  , strip. 
+          '''Interactive data visualization function, which accepts excel file, X & Y column.
+    Chart types accepted are bar , scatter , pie , sun , histogram , box  , strip.
     Args:
         input_filepath (str): [description]. Defaults to "".
         input_sheetname (str): [description]. Defaults to "Sheet1".
@@ -907,7 +913,8 @@ class Block {
         'Google Spreadsheet',
         'Authenticate Spreadsheet',
         'Authenticate',
-        'Google'
+        'Google',
+        'Spreadsheet',
       ],
       shortDescription: '',
       fullDescription: '''
@@ -1028,7 +1035,8 @@ class Block {
         'Excel',
         'Cell',
         'Cell Number',
-        'Get Single Cell'
+        'Get Single Cell',
+        'Dataframe',
       ],
       shortDescription: '',
       fullDescription: '''
@@ -1054,7 +1062,8 @@ class Block {
         'Set',
         'Cell',
         'Cell Number',
-        'Set Single Cell'
+        'Set Single Cell',
+        'Dataframe',
       ],
       shortDescription: '',
       fullDescription: '''
@@ -1101,7 +1110,14 @@ class Block {
       blockXml:
           '''<block type="excel_get_all_header_columns_new">        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>        <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>        <value name="df">            <block type="variables_get">                <field name="VAR" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>            </block>        </value>    </block>''',
       name: 'Excel Get All Header Columns',
-      keywords: ['Excel Get All Header Columns', 'Excel', 'Header', 'Columns'],
+      keywords: [
+        'Excel Get All Header Columns',
+        'Excel',
+        'Header',
+        'Columns',
+        'Get All Header Columns',
+        'Dataframe'
+      ],
       shortDescription: '',
       fullDescription: '''
     Description:
@@ -1122,7 +1138,9 @@ class Block {
         'Excel',
         'Row',
         'Column',
-        'Count'
+        'Count',
+        'Get Row Column Count',
+        'Dataframe',
       ],
       shortDescription: '',
       fullDescription: '''
@@ -1155,7 +1173,13 @@ class Block {
       blockXml:
           ''' <block type="excel_clear_sheet_new">        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>        <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>        <value name="df">            <block type="variables_get">                <field name="VAR" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>            </block>        </value>    </block>''',
       name: 'Excel Clear Sheet',
-      keywords: ['Excel Clear Sheet', 'Excel', 'Clear', 'Sheet'],
+      keywords: [
+        'Excel Clear Sheet',
+        'Excel',
+        'Clear',
+        'Sheet',
+        'Dataframe',
+      ],
       shortDescription: '',
       fullDescription: '''
     Description:
@@ -1176,7 +1200,8 @@ class Block {
         'Excel',
         'Drop Columns',
         'Columns',
-        'Drop'
+        'Drop',
+        'Dataframe',
       ],
       shortDescription: '',
       fullDescription: '''
@@ -1199,7 +1224,8 @@ class Block {
         'Excel',
         'Remove Duplicates',
         'Duplicates',
-        'Remove'
+        'Remove',
+        'Dataframe',
       ],
       shortDescription: '',
       fullDescription: '''
@@ -1224,7 +1250,8 @@ class Block {
         'Split',
         'Column Values',
         'Values',
-        'Split'
+        'Split',
+        'Dataframe',
       ],
       shortDescription: '',
       fullDescription: '''
@@ -1249,7 +1276,8 @@ class Block {
         'Excel',
         'Value Exists',
         'Value',
-        'Exists'
+        'Exists',
+        'Dataframe',
       ],
       shortDescription: '',
       fullDescription: '''
@@ -1377,7 +1405,11 @@ class Block {
       blockXml:
           '''<block type="df_from_list">        <field name="df" id=",j;+y6@nrq0T_ikaULiA">DF</field>        <value name="list_of_lists">            <block type="lists_create_with" inline="true">                <mutation items="2"></mutation>                <value name="ADD0">                    <block type="text">                        <field name="TEXT"></field>                    </block>                </value>                <value name="ADD1">                    <block type="text">                        <field name="TEXT"></field>                    </block>                </value>            </block>        </value>        <value name="column_names">            <block type="lists_create_with" inline="true">                <mutation items="2"></mutation>                <value name="ADD0">                    <block type="text">                        <field name="TEXT"></field>                    </block>                </value>                <value name="ADD1">                    <block type="text">                        <field name="TEXT"></field>                    </block>                </value>            </block>        </value>    </block>''',
       name: 'DataFrame From List',
-      keywords: ['DataFrame From List', 'DataFrame'],
+      keywords: [
+        'DataFrame From List',
+        'DataFrame',
+        'List',
+      ],
       shortDescription: '',
       fullDescription: '''
     Description:
@@ -1740,7 +1772,7 @@ class Block {
       keywords: ['if', 'else', 'elif'],
       shortDescription: '',
       fullDescription: '''
-      The if statement is used for conditional execution. 
+      The if statement is used for conditional execution.
       It selects exactly one of the suites by evaluating the expressions one by one until one is found to be true; then that suite is executed (and no other part of the if statement is executed or evaluated). If all expressions are false, the suite of the else clause, if present, is executed.
       ''',
     ),
@@ -1780,7 +1812,7 @@ class Block {
       keywords: ['True', 'False'],
       shortDescription: '',
       fullDescription: '''
-      In the context of Boolean operations, and also when expressions are used by control flow statements, the following values are interpreted as false: False, None, numeric zero of all types, and empty strings and containers (including strings, tuples, lists, dictionaries, sets and frozensets). All other values are interpreted as true. 
+      In the context of Boolean operations, and also when expressions are used by control flow statements, the following values are interpreted as false: False, None, numeric zero of all types, and empty strings and containers (including strings, tuples, lists, dictionaries, sets and frozensets). All other values are interpreted as true.
       ''',
     ),
     Block(
@@ -1848,7 +1880,7 @@ class Block {
       The for each statement is used for repeated execution of a suite of statements.
       for_stmt ::= "for" target_list "in" expression_list ":" suite
                 ["else" ":" suite]\n
-      The target_list is a list of targets, each of which is a name or a tuple of names. The target_list is executed once, before the first iteration through the loop. The expression_list is a list of expressions, each of which is evaluated and assigned to the target. The expression_list is executed once, before the first iteration through the loop. The suite is executed for each iteration through the loop.                
+      The target_list is a list of targets, each of which is a name or a tuple of names. The target_list is executed once, before the first iteration through the loop. The expression_list is a list of expressions, each of which is evaluated and assigned to the target. The expression_list is executed once, before the first iteration through the loop. The suite is executed for each iteration through the loop.
       ''',
     ),
     Block(
@@ -2248,6 +2280,254 @@ class Block {
       The lists sort block is used to represent sorting a list.
       ''',
     ),
+    Block(
+      blockXml: '''
+      <block type="excel_concat_all_sheets_of_given_excel">        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>        <value name="excel_file_path">          <block type="text">            <field name="TEXT"></field>          </block>        </value>        <value name="sheet_names_as_list">          <block type="lists_create_with" inline="true">            <mutation items="2"></mutation>            <value name="ADD0">              <block type="text">                <field name="TEXT"></field>              </block>            </value>            <value name="ADD1">              <block type="text">                <field name="TEXT"></field>              </block>            </value>          </block>        </value>      </block>
+''',
+      name: 'Concat All Sheets of Given Excel',
+      keywords: [
+        'Concat All Sheets of Given Excel',
+        'Concat',
+        'Excel',
+        'Dataframe',
+        'Merge',
+      ],
+      shortDescription: '',
+      fullDescription: '''
+      The excel concat all sheets of given excel block is used to represent concatenating all sheets of a given excel file.
+      ''',
+    ),
+    Block(
+      blockXml: '''
+      <block type="folder_delete_file_or_folder">
+        <field name="print_status">TRUE</field>
+        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+        <value name="file_or_folder_path">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+''',
+      name: 'Delete File or Folder',
+      keywords: [
+        'Delete File or Folder',
+        'Delete',
+        'Delete File',
+        'Delete Folder'
+      ],
+      shortDescription: '',
+      fullDescription: '''
+      The folder delete file or folder block is used to represent deleting a file or folder.
+      ''',
+    ),
+    Block(
+      blockXml: '''
+      <block type="df_drop_rows">
+        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="Ln(xNs527~EH0J!I1BOn">df</field>
+          </block>
+        </value>
+        <value name="row_start">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="row_end">
+          <block type="math_number">
+            <field name="NUM">3</field>
+          </block>
+        </value>
+      </block>
+''',
+      name: 'Drop Rows',
+      keywords: ['Drop Rows', 'Drop', 'Drop Row'],
+      shortDescription: '',
+      fullDescription: '''
+      This block is used to dropp a range of rows from a dataframe.
+      ''',
+    ),
+    Block(
+      blockXml: '''
+      <block type="df_vlookup">
+        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>
+        <value name="df1">
+          <block type="variables_get">
+            <field name="VAR" id=";b;R)}l5g6Iv1)n`#|QL">df1</field>
+          </block>
+        </value>
+        <value name="df2">
+          <block type="variables_get">
+            <field name="VAR" id=";b;R)}l5g6Iv1)n`#|QL">df1</field>
+          </block>
+        </value>
+        <value name="column_name">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="how">
+          <block type="text">
+            <field name="TEXT">left</field>
+          </block>
+        </value>
+      </block> 
+''',
+      name: 'VLookup',
+      keywords: ['Vlookup', 'Merge', 'Dataframe', 'Excel'],
+      shortDescription: '',
+      fullDescription: '''
+      This block is used to perform a vlookup on dataframes.
+      ''',
+    ),
+    Block(
+      blockXml: '''
+      <block type="excel_get_single_cell">
+        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="Ln(xNs527~EH0J!I1BOn">df</field>
+          </block>
+        </value>
+        <value name="header">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="column_name">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="cell_number">
+          <block type="math_number">
+            <field name="NUM">3</field>
+          </block>
+        </value>
+      </block>
+''',
+      name: 'Get Single Cell',
+      keywords: [
+        'Get Single Cell',
+        'Get',
+        'Get Cell',
+        'Cell',
+        'Excel',
+        'Dataframe',
+      ],
+      shortDescription: '',
+      fullDescription: '''
+      This block is used to get a single cell value from a dataframe.
+      ''',
+    ),
+    Block(
+      blockXml: '''
+      <block type="excel_set_single_cell">
+        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="Ln(xNs527~EH0J!I1BOn">df</field>
+          </block>
+        </value>
+        <value name="column_name">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="cell_number">
+          <block type="math_number">
+            <field name="NUM">3</field>
+          </block>
+        </value>
+        <value name="text">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+''',
+      name: 'Set Single Cell',
+      keywords: [
+        'Set Single Cell',
+        'Set',
+        'Set Cell',
+        'Cell',
+        'Excel',
+        'Dataframe',
+      ],
+      shortDescription: '',
+      fullDescription: '''
+      This block is used to set a single cell value in a dataframe.
+      ''',
+    ),
+    Block(
+      blockXml: '''
+      <block type="pdf_extract_all_tables">
+        <field name="table_with_borders">TRUE</field>
+        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+        <value name="pdf_file_path">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="output_folder">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="output_file_name">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+''',
+      name: 'Extract All Tables From PDF',
+      keywords: ['Extract', 'Table', 'PDF', 'Excel'],
+      shortDescription: '',
+      fullDescription: '''
+      This block is used to extract all tables from a PDF file.
+      ''',
+    ),
+    Block(
+      blockXml: '''
+      <block type="pdf_extract_table">
+        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>
+        <value name="pdf_file_path">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="table_number">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="page_number">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+''',
+      name: 'Extract Specific Table from a Page of PDF',
+      keywords: ['Extract', 'Table', 'PDF', 'Excel'],
+      shortDescription: '',
+      fullDescription: '''
+      This block is used to extract desired table from a page of a PDF file.
+      ''',
+    ),
+    Block(
+      blockXml: '''<block type="get_path"></block>''',
+      name: 'Get Path',
+      keywords: ['Path', 'Get', 'Choose','Browse', 'Upload', 'File'],
+      shortDescription: '',
+      fullDescription: '''
+      This block is used to get the path of the file.
+      ''',
     // Python  Ends
   ];
 }

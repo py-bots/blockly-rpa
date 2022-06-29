@@ -386,37 +386,6 @@
       <!-- <category name="Functions" css-icon="${PROCEDURE_CATEGORY_ICON}" colour="${PROCEDURE_CATEGORY_COLOUR}" custom="PROCEDURE"></category> -->
     </category>
     <category name="NEW CAT" colour="#5ba58c">
-      <block type="controls_if">
-        <mutation else="1"></mutation>
-        <value name="IF0">
-          <block type="logic_compare">
-            <field name="OP">EQ</field>
-            <value name="A">
-              <block type="variables_get">
-                <field name="VAR" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-              </block>
-            </value>
-            <value name="B">
-              <block type="logic_boolean">
-                <field name="BOOL">TRUE</field>
-              </block>
-            </value>
-          </block>
-        </value>
-        <statement name="DO0">
-          <block type="print_ap">
-            <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-          </block>
-        </statement>
-        <statement name="ELSE">
-          <block type="print_ap">
-            <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-          </block>
-        </statement>
-      </block>
-      <block type="print_ap">
-        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-      </block>
       <block type="excel_concat_all_sheets_of_given_excel">
         <field name="data" id="U#-~hkY|E~Kap$0iE},[">DATA</field>
         <value name="excel_file_path">
@@ -487,52 +456,6 @@
         <value name="how">
           <block type="text">
             <field name="TEXT">left</field>
-          </block>
-        </value>
-      </block>
-      <block type="excel_get_single_cell">
-        <field name="data" id="U#-~hkY|E~Kap$0iE},[">DATA</field>
-        <value name="df">
-          <block type="variables_get">
-            <field name="VAR" id="Ln(xNs527~EH0J!I1BOn">df</field>
-          </block>
-        </value>
-        <value name="header">
-          <block type="math_number">
-            <field name="NUM">1</field>
-          </block>
-        </value>
-        <value name="column_name">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="cell_number">
-          <block type="math_number">
-            <field name="NUM">3</field>
-          </block>
-        </value>
-      </block>
-      <block type="excel_set_single_cell">
-        <field name="data" id="U#-~hkY|E~Kap$0iE},[">DATA</field>
-        <value name="df">
-          <block type="variables_get">
-            <field name="VAR" id="Ln(xNs527~EH0J!I1BOn">df</field>
-          </block>
-        </value>
-        <value name="column_name">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="cell_number">
-          <block type="math_number">
-            <field name="NUM">3</field>
-          </block>
-        </value>
-        <value name="text">
-          <block type="text">
-            <field name="TEXT"></field>
           </block>
         </value>
       </block>
@@ -1052,54 +975,6 @@
           </block>
         </value>
         <value name="output_filename">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-      </block>
-      <block type="excel_get_single_cell_new">
-        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-        <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
-        <value name="df">
-          <block type="variables_get">
-            <field name="VAR" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
-          </block>
-        </value>
-        <value name="header">
-          <block type="math_number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-        <value name="column_name">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="cell_number">
-          <block type="math_number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-      </block>
-      <block type="excel_set_single_cell_new">
-        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-        <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
-        <value name="df">
-          <block type="variables_get">
-            <field name="VAR" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
-          </block>
-        </value>
-        <value name="column_name">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="cell_number">
-          <block type="math_number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-        <value name="text">
           <block type="text">
             <field name="TEXT"></field>
           </block>
