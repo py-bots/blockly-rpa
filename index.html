@@ -1882,11 +1882,16 @@
           </block>
         </value>
         <value name="function_variable">
-          <block type="chrome_wait_until">
+          <block type="chrome_wait_until_v2">
             <field name="element">t</field>
             <value name="text">
               <block type="text">
                 <field name="TEXT">MyAutoPylot is awesome</field>
+              </block>
+            </value>
+            <value name="delay">
+              <block type="math_number">
+                <field name="NUM">10</field>
               </block>
             </value>
             <value name="navigate">
