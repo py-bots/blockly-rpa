@@ -1071,6 +1071,25 @@
           </block>
         </value>
       </block>
+      <block type="df_convert_column_to_type">
+        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
+        <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
+        <value name="df">
+          <block type="variables_get">
+            <field name="VAR" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
+          </block>
+        </value>
+        <value name="column_name">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="column_type">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
       <block type="excel_clear_sheet_new">
         <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
         <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>
@@ -2583,7 +2602,7 @@
       <block type="get_path"></block>
     </category>
   </xml>
-  <!-- 
+  <!--
   <div style="height: 100px;">
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1028488943525317" data-ad-slot="5096514436"
       data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -2615,7 +2634,7 @@
   <script src="./srcs/main.js"></script>
   <script src="./lib/flutter_embed.js"></script>
   <!-- <script>
-    df = '<block type="Advanced_AP"><next><block type="try_except_adv"><field name="e" id="s)W$+PZu:VYZc`zKzLvd">Error</field></block></next></block>'
+    df = '<block type="df_convert_column_to_type">        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>        <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>        <value name="df">          <block type="variables_get">            <field name="VAR" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>          </block>        </value>        <value name="column_name">          <block type="text">            <field name="TEXT"></field>          </block>        </value>        <value name="column_type">          <block type="text">            <field name="TEXT"></field>          </block>        </value>      </block>'
 
     add_xml_to_workspace(df);
   </script> -->
