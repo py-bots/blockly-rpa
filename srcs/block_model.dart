@@ -546,9 +546,9 @@ class Block {
     ),
     Block(
       blockXml:
-          'block type="pause_program"> <field name="status" id=":ulA-E6LLi-c7ikn!(%">STATUS</field> <value name="seconds"> <block type="math_number"> <field name="NUM">5</field> </block> </value> </block>',
+          '<block type="pause_program"> <field name="status" id=":ulA-E6LLi-c7ikn!(%">STATUS</field> <value name="seconds"> <block type="math_number"> <field name="NUM">5</field> </block> </value> </block>',
       name: 'Pause Program',
-      keywords: ['pause', 'program', 'sleep'],
+      keywords: ['pause', 'program', 'sleep', 'delay'],
       shortDescription: 'Pause Program for a given time',
       fullDescription: '''Stops the program for given seconds
     Args:
@@ -974,7 +974,7 @@ class Block {
     ),
     Block(
       blockXml:
-          '''<block type="excel_to_dataframe_new">        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>        <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>        <value name="input_filepath">            <block type="text">                <field name="TEXT"></field>            </block>        </value>        <value name="input_sheetname">            <block type="text">                <field name="TEXT"></field>            </block>        </value>        <value name="header">            <block type="math_number">                <field name="NUM">0</field>            </block>        </value>    </block>''',
+          '''<block type="excel_to_dataframe_new">        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>        <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>        <value name="input_filepath">            <block type="text">                <field name="TEXT"></field>            </block>        </value>        <value name="input_sheetname">            <block type="text">                <field name="TEXT"></field>            </block>        </value>        <value name="header">            <block type="math_number">                <field name="NUM">1</field>            </block>        </value>    </block>''',
       name: 'Excel To Dataframe',
       keywords: ['Excel To Dataframe', 'Excel', 'Dataframe', 'To Dataframe'],
       shortDescription: '',
@@ -1314,29 +1314,6 @@ class Block {
         input_template_sheetname (str)         : Input template excel sheet name.
         output_folder (str)         : Output folder path.
         output_filename (str)         : Output filename.
-    Returns:
-        bool : [status] Whether the operation is successful or not.
-        data : [data] Data of the excel file.
-  ''',
-    ),
-    Block(
-      blockXml:
-          '''<block type="excel_apply_format_as_table_new">        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>        <value name="input_filepath">            <block type="text">                <field name="TEXT"></field>            </block>        </value>        <value name="input_sheetname">            <block type="text">                <field name="TEXT"></field>            </block>        </value>    </block>''',
-      name: 'Excel Apply Format As Table',
-      keywords: [
-        'Excel Apply Format As Table',
-        'Excel',
-        'Table',
-        'Format',
-        'Apply'
-      ],
-      shortDescription: '',
-      fullDescription: '''
-    Description:
-        Applies format as table to excel
-    Args:
-        input_filepath (str)         : Input excel file path.
-        input_sheetname (str)         : Input excel sheet name.
     Returns:
         bool : [status] Whether the operation is successful or not.
         data : [data] Data of the excel file.
@@ -2282,8 +2259,7 @@ class Block {
     ),
     Block(
       blockXml: '''
-      <block type="excel_concat_all_sheets_of_given_excel">        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>        <value name="excel_file_path">          <block type="text">            <field name="TEXT"></field>          </block>        </value>        <value name="sheet_names_as_list">          <block type="lists_create_with" inline="true">            <mutation items="2"></mutation>            <value name="ADD0">              <block type="text">                <field name="TEXT"></field>              </block>            </value>            <value name="ADD1">              <block type="text">                <field name="TEXT"></field>              </block>            </value>          </block>        </value>      </block>
-''',
+      <block type="excel_concat_all_sheets_of_given_excel">        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>        <value name="excel_file_path">          <block type="text">            <field name="TEXT"></field>          </block>        </value>        <value name="sheet_names_as_list">          <block type="lists_create_with" inline="true">            <mutation items="2"></mutation>            <value name="ADD0">              <block type="text">                <field name="TEXT"></field>              </block>            </value>            <value name="ADD1">              <block type="text">                <field name="TEXT"></field>              </block>            </value>          </block>        </value>      </block>''',
       name: 'Concat All Sheets of Given Excel',
       keywords: [
         'Concat All Sheets of Given Excel',
@@ -2298,17 +2274,8 @@ class Block {
       ''',
     ),
     Block(
-      blockXml: '''
-      <block type="folder_delete_file_or_folder">
-        <field name="print_status">TRUE</field>
-        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-        <value name="file_or_folder_path">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-      </block>
-''',
+      blockXml:
+          '''<block type="folder_delete_file_or_folder">        <field name="print_status">TRUE</field>        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>        <value name="file_or_folder_path">          <block type="text">            <field name="TEXT"></field>          </block>        </value>      </block>''',
       name: 'Delete File or Folder',
       keywords: [
         'Delete File or Folder',
@@ -2322,26 +2289,8 @@ class Block {
       ''',
     ),
     Block(
-      blockXml: '''
-      <block type="df_drop_rows">
-        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>
-        <value name="df">
-          <block type="variables_get">
-            <field name="VAR" id="Ln(xNs527~EH0J!I1BOn">df</field>
-          </block>
-        </value>
-        <value name="row_start">
-          <block type="math_number">
-            <field name="NUM">1</field>
-          </block>
-        </value>
-        <value name="row_end">
-          <block type="math_number">
-            <field name="NUM">3</field>
-          </block>
-        </value>
-      </block>
-''',
+      blockXml:
+          '''<block type="df_drop_rows">        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>        <value name="df">          <block type="variables_get">            <field name="VAR" id="Ln(xNs527~EH0J!I1BOn">df</field>          </block>        </value>        <value name="row_start">          <block type="math_number">            <field name="NUM">1</field>          </block>        </value>        <value name="row_end">          <block type="math_number">            <field name="NUM">3</field>          </block>        </value>      </block>''',
       name: 'Drop Rows',
       keywords: ['Drop Rows', 'Drop', 'Drop Row'],
       shortDescription: '',
@@ -2350,31 +2299,8 @@ class Block {
       ''',
     ),
     Block(
-      blockXml: '''
-      <block type="df_vlookup">
-        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>
-        <value name="df1">
-          <block type="variables_get">
-            <field name="VAR" id=";b;R)}l5g6Iv1)n`#|QL">df1</field>
-          </block>
-        </value>
-        <value name="df2">
-          <block type="variables_get">
-            <field name="VAR" id=";b;R)}l5g6Iv1)n`#|QL">df1</field>
-          </block>
-        </value>
-        <value name="column_name">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="how">
-          <block type="text">
-            <field name="TEXT">left</field>
-          </block>
-        </value>
-      </block> 
-''',
+      blockXml:
+          '''<block type="df_vlookup">        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>        <value name="df1">          <block type="variables_get">            <field name="VAR" id=";b;R)}l5g6Iv1)n`#|QL">df1</field>          </block>        </value>        <value name="df2">          <block type="variables_get">            <field name="VAR" id=";b;R)}l5g6Iv1)n`#|QL">df1</field>          </block>        </value>        <value name="column_name">          <block type="text">            <field name="TEXT"></field>          </block>        </value>        <value name="how">          <block type="text">            <field name="TEXT">left</field>          </block>        </value>      </block>''',
       name: 'VLookup',
       keywords: ['Vlookup', 'Merge', 'Dataframe', 'Excel'],
       shortDescription: '',
@@ -2383,31 +2309,8 @@ class Block {
       ''',
     ),
     Block(
-      blockXml: '''
-      <block type="excel_get_single_cell">
-        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>
-        <value name="df">
-          <block type="variables_get">
-            <field name="VAR" id="Ln(xNs527~EH0J!I1BOn">df</field>
-          </block>
-        </value>
-        <value name="header">
-          <block type="math_number">
-            <field name="NUM">1</field>
-          </block>
-        </value>
-        <value name="column_name">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="cell_number">
-          <block type="math_number">
-            <field name="NUM">3</field>
-          </block>
-        </value>
-      </block>
-''',
+      blockXml:
+          '''<block type="excel_get_single_cell">        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>        <value name="df">          <block type="variables_get">            <field name="VAR" id="Ln(xNs527~EH0J!I1BOn">df</field>          </block>        </value>        <value name="header">          <block type="math_number">            <field name="NUM">1</field>          </block>        </value>        <value name="column_name">          <block type="text">            <field name="TEXT"></field>          </block>        </value>        <value name="cell_number">          <block type="math_number">            <field name="NUM">3</field>          </block>        </value>      </block>''',
       name: 'Get Single Cell',
       keywords: [
         'Get Single Cell',
@@ -2423,31 +2326,8 @@ class Block {
       ''',
     ),
     Block(
-      blockXml: '''
-      <block type="excel_set_single_cell">
-        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>
-        <value name="df">
-          <block type="variables_get">
-            <field name="VAR" id="Ln(xNs527~EH0J!I1BOn">df</field>
-          </block>
-        </value>
-        <value name="column_name">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="cell_number">
-          <block type="math_number">
-            <field name="NUM">3</field>
-          </block>
-        </value>
-        <value name="text">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-      </block>
-''',
+      blockXml:
+          '''<block type="excel_set_single_cell">        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>        <value name="df">          <block type="variables_get">            <field name="VAR" id="Ln(xNs527~EH0J!I1BOn">df</field>          </block>        </value>        <value name="column_name">          <block type="text">            <field name="TEXT"></field>          </block>        </value>        <value name="cell_number">          <block type="math_number">            <field name="NUM">3</field>          </block>        </value>        <value name="text">          <block type="text">            <field name="TEXT"></field>          </block>        </value>      </block>''',
       name: 'Set Single Cell',
       keywords: [
         'Set Single Cell',
@@ -2463,58 +2343,17 @@ class Block {
       ''',
     ),
     Block(
-      blockXml: '''
-      <block type="pdf_extract_all_tables">
-        <field name="table_with_borders">TRUE</field>
-        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-        <value name="pdf_file_path">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="output_folder">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="output_file_name">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-      </block>
-''',
-      name: 'Extract All Tables From PDF',
-      keywords: ['Extract', 'Table', 'PDF', 'Excel'],
-      shortDescription: '',
-      fullDescription: '''
-      This block is used to extract all tables from a PDF file.
-      ''',
-    ),
-    Block(
-      blockXml: '''
-      <block type="pdf_extract_table">
-        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>
-        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>
-        <value name="pdf_file_path">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="table_number">
-          <block type="math_number">
-            <field name="NUM">1</field>
-          </block>
-        </value>
-        <value name="page_number">
-          <block type="math_number">
-            <field name="NUM">1</field>
-          </block>
-        </value>
-      </block>
-''',
+      blockXml:
+          '''<block type="pdf_extract_table">        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>        <field name="data" id="U#-~hkY|E~Kap0iE},[">DATA</field>        <value name="pdf_file_path">          <block type="text">            <field name="TEXT"></field>          </block>        </value>        <value name="table_number">          <block type="math_number">            <field name="NUM">1</field>          </block>        </value>        <value name="page_number">          <block type="math_number">            <field name="NUM">1</field>          </block>        </value>      </block>''',
       name: 'Extract Specific Table from a Page of PDF',
-      keywords: ['Extract', 'Table', 'PDF', 'Excel'],
+      keywords: [
+        'Extract',
+        'Table',
+        'PDF',
+        'Excel',
+        'extract single',
+        'one table'
+      ],
       shortDescription: '',
       fullDescription: '''
       This block is used to extract desired table from a page of a PDF file.
@@ -2523,11 +2362,35 @@ class Block {
     Block(
       blockXml: '''<block type="get_path"></block>''',
       name: 'Get Path',
-      keywords: ['Path', 'Get', 'Choose','Browse', 'Upload', 'File'],
+      keywords: ['Path', 'Get', 'Choose', 'Browse', 'Upload', 'File'],
       shortDescription: '',
       fullDescription: '''
       This block is used to get the path of the file.
       ''',
+    ),
+    Block(
+      blockXml:
+          '''<block type="df_convert_column_to_type">        <field name="status" id=":ulA-E6LLi-c7ikn!`(%">STATUS</field>        <field name="data" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>        <value name="df">          <block type="variables_get">            <field name="VAR" id="fzNXQc/~4k|pC6r:o?/5">DATA</field>          </block>        </value>        <value name="column_name">          <block type="text">            <field name="TEXT"></field>          </block>        </value>        <value name="column_type">          <block type="text">            <field name="TEXT"></field>          </block>        </value>      </block>''',
+      name: 'Dataframe Change Column Type',
+      keywords: ['Dataframe', 'Change', 'Column', 'Type', 'Excel'],
+      shortDescription: '',
+      fullDescription: '''
+      Description:
+          Converts a column type of a dataframe to a given type
+          Column type doesn't persist after writing to excel
+
+      Args:
+          df : dataframe
+
+          column_name : Single column name or list of column names
+
+          column_type : column type to be converted to like string, int, float, date, boolean, complex, bytes, etc.
+
+      Returns:
+          [data]
+          data : The modified dataframe object
+      ''',
+    ),
     // Python  Ends
   ];
 }
